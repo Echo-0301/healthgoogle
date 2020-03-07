@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.DietMapper">
+  <resultMap id="BaseResultMap" type="com.test.pojo.Diet">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="total" jdbcType="DOUBLE" property="total" />
+    <result column="breakfast" jdbcType="DOUBLE" property="breakfast" />
+    <result column="lunch" jdbcType="DOUBLE" property="lunch" />
+    <result column="dinner" jdbcType="DOUBLE" property="dinner" />
+    <result column="sport" jdbcType="DOUBLE" property="sport" />
+    <result column="Abreakfast" jdbcType="DOUBLE" property="abreakfast" />
+    <result column="Adinner" jdbcType="DOUBLE" property="adinner" />
+    <result column="Alunch" jdbcType="DOUBLE" property="alunch" />
+    <result column="Asport" jdbcType="DOUBLE" property="asport" />
+  </resultMap>
+  <insert id="insert" parameterType="com.test.pojo.Diet">
+    insert into diet (id, total, breakfast, 
+      lunch, dinner, sport, 
+      Abreakfast, Adinner, Alunch, 
+      Asport)
+    values (#{id,jdbcType=INTEGER}, #{total,jdbcType=DOUBLE}, #{breakfast,jdbcType=DOUBLE}, 
+      #{lunch,jdbcType=DOUBLE}, #{dinner,jdbcType=DOUBLE}, #{sport,jdbcType=DOUBLE}, 
+      #{abreakfast,jdbcType=DOUBLE}, #{adinner,jdbcType=DOUBLE}, #{alunch,jdbcType=DOUBLE}, 
+      #{asport,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.test.pojo.Diet">
+    insert into diet
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="total != null">
+        total,
+      </if>
+      <if test="breakfast != null">
+        breakfast,
+      </if>
+      <if test="lunch != null">
+        lunch,
+      </if>
+      <if test="dinner != null">
+        dinner,
+      </if>
+      <if test="sport != null">
+        sport,
+      </if>
+      <if test="abreakfast != null">
+        Abreakfast,
+      </if>
+      <if test="adinner != null">
+        Adinner,
+      </if>
+      <if test="alunch != null">
+        Alunch,
+      </if>
+      <if test="asport != null">
+        Asport,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="total != null">
+        #{total,jdbcType=DOUBLE},
+      </if>
+      <if test="breakfast != null">
+        #{breakfast,jdbcType=DOUBLE},
+      </if>
+      <if test="lunch != null">
+        #{lunch,jdbcType=DOUBLE},
+      </if>
+      <if test="dinner != null">
+        #{dinner,jdbcType=DOUBLE},
+      </if>
+      <if test="sport != null">
+        #{sport,jdbcType=DOUBLE},
+      </if>
+      <if test="abreakfast != null">
+        #{abreakfast,jdbcType=DOUBLE},
+      </if>
+      <if test="adinner != null">
+        #{adinner,jdbcType=DOUBLE},
+      </if>
+      <if test="alunch != null">
+        #{alunch,jdbcType=DOUBLE},
+      </if>
+      <if test="asport != null">
+        #{asport,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+</mapper>

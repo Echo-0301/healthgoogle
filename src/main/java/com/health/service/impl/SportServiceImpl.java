@@ -1,8 +1,8 @@
 package com.health.service.impl;
 
-import com.health.entity.User;
-import com.health.mapper.UserMapper;
-import com.health.service.IUserService;
+import com.health.entity.Sport;
+import com.health.mapper.SportMapper;
+import com.health.service.ISportService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,6 +14,6 @@ import org.springframework.stereotype.Service;
  * @since 2020-03-11
  */
 @Service
-public class UserServiceImpl implements IUserService {
+public class SportServiceImpl implements ISportService {
 
 }

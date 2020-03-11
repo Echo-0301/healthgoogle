@@ -1,6 +1,5 @@
 package com.health.common;
 
-import com.health.pojo.User;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import java.io.Serializable;
@@ -13,7 +12,7 @@ public class ServerResponse<T> implements Serializable {
     private String message;
     private T data;
     private Boolean result;
-    private User user;
+
     public int getCode () {
         return code ;
     }
@@ -46,13 +45,6 @@ public class ServerResponse<T> implements Serializable {
         this.result = result;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public ServerResponse(int code ){
         this.code  = code ;

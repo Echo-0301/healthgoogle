@@ -1,6 +1,6 @@
 package com.health.service;
 
-import com.health.entity.User;
+import com.health.entity.Userinf;
 
 /**
  * <p>
@@ -10,6 +10,6 @@ import com.health.entity.User;
  * @author oo
  * @since 2020-03-11
  */
-public interface IUserService {
+public interface IUserinfService{
 
 }

@@ -1,54 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.test.dao.SportMapper">
-  <resultMap id="BaseResultMap" type="com.test.pojo.Sport">
+<mapper namespace="com.health.mapper.SportMapper">
+  <resultMap id="BaseResultMap" type="com.health.entity.Sport">
     <result column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="col" jdbcType="DOUBLE" property="col" />
     <result column="image" jdbcType="VARCHAR" property="image" />
-    <result column="useId" jdbcType="INTEGER" property="useid" />
+    <result column="useId" jdbcType="INTEGER" property="useId" />
   </resultMap>
-  <insert id="insert" parameterType="com.test.pojo.Sport">
-    insert into sport (id, name, col, 
-      image, useId)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{col,jdbcType=DOUBLE}, 
-      #{image,jdbcType=VARCHAR}, #{useid,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="com.test.pojo.Sport">
-    insert into sport
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="name != null">
-        name,
-      </if>
-      <if test="col != null">
-        col,
-      </if>
-      <if test="image != null">
-        image,
-      </if>
-      <if test="useid != null">
-        useId,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="col != null">
-        #{col,jdbcType=DOUBLE},
-      </if>
-      <if test="image != null">
-        #{image,jdbcType=VARCHAR},
-      </if>
-      <if test="useid != null">
-        #{useid,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
+
 </mapper>

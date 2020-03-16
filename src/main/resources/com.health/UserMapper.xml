@@ -8,6 +8,30 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="Taken" jdbcType="VARCHAR" property="taken" />
   </resultMap>
+
+  <!--<insert id="insert" parameterType="com.health.entity.User">-->
+    <!--insert into user(userName, password, phone)-->
+    <!--values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR})-->
+  <!--</insert>-->
+
+  <select id="select" resultType="com.health.entity.User">
+    select * from user
+  </select>
+
+  <select id="selectByName" resultType="com.health.entity.User">
+    select * from user where userName=#{userName}
+  </select>
+
+  <select id="autoLogin" resultType="com.health.entity.User">
+    select * from user where taken = #{taken}
+  </select>
+
+  <update id="registerAutoLogin">
+    update user
+    set taken = #{taken,jdbcType=VARCHAR}
+    where userName = #{userName,jdbcType=VARCHAR}
+  </update>
 
 </mapper>

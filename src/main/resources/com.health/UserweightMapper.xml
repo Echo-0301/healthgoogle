@@ -5,6 +5,48 @@
     <result column="id" jdbcType="INTEGER" property="id" />
     <result column="date" jdbcType="TIMESTAMP" property="date" />
     <result column="weight" jdbcType="DOUBLE" property="weight" />
+    <!--<result column="max"></result>-->
+    <!--max;-->
+
+    <!--min;-->
+
+   <!--ave;-->
+
+   <!--Rday;-->
+    <!--Dchange; Wchange;-->
   </resultMap>
+
+  <select id="getAll" resultType="com.health.entity.Userweight">
+    select * from userweight id=#{id}
+  </select>
+
+  <select id="getOneMounth" resultType="com.health.entity.Userweight">
+    select * from userweight  where id=#{id} and DATE_SUB(CURDATE(), INTERVAL 1 MONTH) &lt;= date
+  </select>
+
+  <select id="getSevenDay" resultType="com.health.entity.Userweight">
+    select * from userweight  where id=#{id} and DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= date
+  </select>
+
+  <select id="getMax" resultType="Double">
+    select max(weight) from userweight where id=#{id}
+  </select>
+
+  <select id="getMin" resultType="Double">
+    select min(weight) from userweight where id=#{id}
+  </select>
+
+  <select id="getAve" resultType="Double">
+    select avg(weight) from userweight where id=#{id}
+  </select>
+
+
+  <!--<select id="getToday" resultType="Double">-->
+   <!--select weight from userweight where id=#{id} and date = to_days(now());-->
+  <!--</select>-->
+
+  <!--<select id="getYesterday" resultType="Double">-->
+  <!--SELECT weight FROM userweight WHERE id=#{id} and  to_days(now()) - date = 1-->
+  <!--</select>-->
 
 </mapper>

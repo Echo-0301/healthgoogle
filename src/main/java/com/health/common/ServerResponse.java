@@ -1,6 +1,8 @@
 package com.health.common;
 
-import org.codehaus.jackson.map.annotate.JsonSerialize;
+//import org.codehaus.jackson.map.annotate.JsonSerialize;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.io.Serializable;
 
@@ -63,6 +65,11 @@ public class ServerResponse<T> implements Serializable {
 
     public ServerResponse(int code , String message){
         this.code  = code ;
+        this.message = message;
+    }
+
+    public ServerResponse(String message){
+//        this.code  = code ;
         this.message = message;
     }
 

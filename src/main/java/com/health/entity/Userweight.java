@@ -24,6 +24,18 @@ public class Userweight{
     private LocalDateTime date;
 
     private Double weight;
+    //最高体重 最低体重 平均体重   日均变化  记录天数 体重变化
+    private Double max;
+
+    private Double min;
+
+    private Double ave;
+
+    private Integer Rday;
+
+    private Double Dchange;
+
+    private Double Wchange;
 
 
 }

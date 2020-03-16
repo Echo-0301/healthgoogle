@@ -1,6 +1,9 @@
 package com.health.service;
 
+import com.health.common.ServerResponse;
 import com.health.entity.Sport;
+
+import java.util.List;
 
 /**
  * <p>
@@ -12,4 +15,7 @@ import com.health.entity.Sport;
  */
 public interface ISportService {
 
+    public ServerResponse<List<Sport>> showSport(int userId);
+
+    public int selectRepect(String name);
 }

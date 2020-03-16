@@ -6,7 +6,37 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="col" jdbcType="DOUBLE" property="col" />
     <result column="image" jdbcType="VARCHAR" property="image" />
-    <result column="useId" jdbcType="INTEGER" property="useId" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
   </resultMap>
 
+  <resultMap id="SportMap" type="com.health.entity.Sport">
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="col" jdbcType="DOUBLE" property="col" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+  </resultMap>
+
+  <select id="selectByUserId" parameterType="int" resultMap="SportMap">
+    select
+    sport.name ,col ,image
+    from sport
+    where userId = #{userId}
+    or userId is  null
+  </select>
+
+  <select id="selectRepect" parameterType="string" resultType="int">
+    select count(*)
+    from sport
+    where sport.name=#{name}
+  </select>
+
+  <insert id="insert" parameterType="com.health.entity.Sport">
+    insert into sport(
+    id,sport.name,col,image,userId
+    )
+    values (
+    #{id,jdbcType=INTEGER},#{name,jdbcType=VARCHAR},
+    #{col,jdbcType=DOUBLE},#{image,jdbcType=VARCHAR},
+    #{userId,jdbcType=INTEGER}
+    )
+  </insert>
 </mapper>

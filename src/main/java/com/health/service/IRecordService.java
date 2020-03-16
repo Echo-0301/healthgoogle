@@ -1,5 +1,6 @@
 package com.health.service;
 
+import com.health.common.ServerResponse;
 import com.health.entity.Record;
 
 /**
@@ -11,5 +12,7 @@ import com.health.entity.Record;
  * @since 2020-03-11
  */
 public interface IRecordService{
+
+    public ServerResponse add_record(Record record);
 
 }

@@ -21,6 +21,8 @@ public class Record{
 
     private Integer id;
 
+    private Integer userId;
+
     private Integer tag;
 
     private Integer list1;
@@ -37,11 +39,11 @@ public class Record{
 
     private Integer list4;
 
-    private Integer nub4;
+    private Integer num4;
 
     private Integer list5;
 
-    private Integer nub5;
+    private Integer num5;
 
     private Integer list6;
 

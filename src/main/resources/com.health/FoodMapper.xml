@@ -6,8 +6,39 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="col" jdbcType="DOUBLE" property="col" />
     <result column="image" jdbcType="VARCHAR" property="image" />
-    <result column="useId" jdbcType="INTEGER" property="useId" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
     <result column="type" jdbcType="INTEGER" property="type" />
   </resultMap>
+
+  <resultMap id="FoodMap" type="com.health.entity.Food">
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="col" jdbcType="DOUBLE" property="col" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+  </resultMap>
+
+  <select id="selectByUserId" parameterType="int" resultMap="FoodMap">
+    select
+    food.name ,col ,image
+    from food
+    where userId = #{userId}
+    or userId is  null
+  </select>
+
+  <select id="selectRepect" parameterType="string" resultType="int">
+    select count(*)
+    from food
+    where food.name=#{name}
+  </select>
+
+  <insert id="insert" parameterType="com.health.entity.Food">
+    insert into food(
+    id, food.name,col,image,userId,food.type
+    )
+    values (
+    #{id,jdbcType=INTEGER},#{name,jdbcType=VARCHAR},
+    #{col,jdbcType=DOUBLE},#{image,jdbcType=VARCHAR},
+    #{userId,jdbcType=INTEGER},#{type,jdbcType=INTEGER}
+    )
+  </insert>
 
 </mapper>

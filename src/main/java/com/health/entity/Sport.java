@@ -27,8 +27,8 @@ public class Sport {
 
     private String image;
 
-    @TableField("useId")
-    private Integer useId;
+    @TableField("userId")
+    private Integer userId;
 
 
 }

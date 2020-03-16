@@ -3,6 +3,7 @@
 <mapper namespace="com.health.mapper.RecordMapper">
   <resultMap id="BaseResultMap" type="com.health.entity.Record">
     <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
     <result column="tag" jdbcType="INTEGER" property="tag" />
     <result column="list1" jdbcType="INTEGER" property="list1" />
     <result column="num1" jdbcType="INTEGER" property="num1" />
@@ -11,9 +12,9 @@
     <result column="list3" jdbcType="INTEGER" property="list3" />
     <result column="num3" jdbcType="INTEGER" property="num3" />
     <result column="list4" jdbcType="INTEGER" property="list4" />
-    <result column="nub4" jdbcType="INTEGER" property="nub4" />
+    <result column="num4" jdbcType="INTEGER" property="num4" />
     <result column="list5" jdbcType="INTEGER" property="list5" />
-    <result column="nub5" jdbcType="INTEGER" property="nub5" />
+    <result column="num5" jdbcType="INTEGER" property="num5" />
     <result column="list6" jdbcType="INTEGER" property="list6" />
     <result column="num6" jdbcType="INTEGER" property="num6" />
     <result column="list7" jdbcType="INTEGER" property="list7" />
@@ -26,4 +27,342 @@
     <result column="num10" jdbcType="INTEGER" property="num10" />
   </resultMap>
 
+  <insert id="insertByUserId" parameterType="com.health.entity.Record"  useGeneratedKeys="true" keyProperty="id">
+    insert into
+    record(id,userId,tag,
+        list1,
+        num1,
+        list2,
+        num2,
+        list3,
+        num3,
+        list4,
+        num4,
+        list5,
+        num5,
+        list6,
+        num6,
+        list7,
+        num7,
+        list8,
+        num8,
+        list9,
+        num9,
+        list10,
+        num10)
+        values (
+        #{id,jdbcType=INTEGER},
+        #{userId,jdbcType=INTEGER},
+        #{tag,jdbcType=INTEGER},
+        #{list1,jdbcType=INTEGER},
+        #{num1,jdbcType=INTEGER},
+        #{list2,jdbcType=INTEGER},
+        #{num2,jdbcType=INTEGER},
+        #{list3,jdbcType=INTEGER},
+        #{num3,jdbcType=INTEGER},
+        #{list4,jdbcType=INTEGER},
+        #{num4,jdbcType=INTEGER},
+        #{list5,jdbcType=INTEGER},
+        #{num5,jdbcType=INTEGER},
+        #{list6,jdbcType=INTEGER},
+        #{num6,jdbcType=INTEGER},
+        #{list7,jdbcType=INTEGER},
+        #{num7,jdbcType=INTEGER},
+        #{list8,jdbcType=INTEGER},
+        #{num8,jdbcType=INTEGER},
+        #{list9,jdbcType=INTEGER},
+        #{ num9,jdbcType=INTEGER},
+        #{list10,jdbcType=INTEGER},
+        #{num10,jdbcType=INTEGER})
+  </insert>
+
+  <!--<insert id="insertByUserId" parameterType="com.health.entity.Record"  useGeneratedKeys="true" keyProperty="id">-->
+    <!--insert into record-->
+    <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
+    <!--<if test="id!=null">-->
+      <!--id,-->
+    <!--</if>-->
+      <!--&lt;!&ndash;<if test="id != null">&ndash;&gt;-->
+        <!--&lt;!&ndash;id,&ndash;&gt;-->
+      <!--&lt;!&ndash;</if>&ndash;&gt;-->
+      <!--<if test="userId != null">-->
+        <!--userId,-->
+      <!--</if>-->
+      <!--<if test="﻿tag != null">-->
+        <!--tag,-->
+      <!--</if>-->
+      <!--<if test="list1 != null">-->
+        <!--list1,-->
+      <!--</if>-->
+      <!--<if test="num1 != null">-->
+        <!--num1,-->
+      <!--</if>-->
+      <!--<if test="list2 != null">-->
+        <!--list2,-->
+      <!--</if>-->
+      <!--<if test="num2 != null">-->
+        <!--num2,-->
+      <!--</if>-->
+      <!--<if test="list3 != null">-->
+        <!--list3,-->
+      <!--</if>-->
+      <!--<if test="num3 != null">-->
+        <!--num3,-->
+      <!--</if>-->
+      <!--<if test="list4 != null">-->
+        <!--list4,-->
+      <!--</if>-->
+      <!--<if test="num4 != null">-->
+        <!--num4,-->
+      <!--</if>-->
+      <!--<if test="list5 != null">-->
+        <!--list5,-->
+      <!--</if>-->
+      <!--<if test="num5 != null">-->
+        <!--num5,-->
+      <!--</if>-->
+      <!--<if test="list6 != null">-->
+        <!--list6,-->
+      <!--</if>-->
+      <!--<if test="num6 != null">-->
+        <!--num6,-->
+      <!--</if>-->
+      <!--<if test="list7 != null">-->
+        <!--list7,-->
+      <!--</if>-->
+      <!--<if test="num7 != null">-->
+        <!--num7,-->
+      <!--</if>-->
+      <!--<if test="list8 != null">-->
+        <!--list8,-->
+      <!--</if>-->
+      <!--<if test="num8 != null">-->
+        <!--num8,-->
+      <!--</if>-->
+      <!--<if test="list9 != null">-->
+        <!--list9,-->
+      <!--</if>-->
+      <!--<if test="num9 != null">-->
+        <!--num9,-->
+      <!--</if>-->
+      <!--<if test="list10 != null">-->
+        <!--list10,-->
+      <!--</if>-->
+      <!--<if test="num10 != null">-->
+        <!--num10,-->
+      <!--</if>-->
+    <!--</trim>-->
+    <!--<trim prefix="values (" suffix=")" suffixOverrides=",">-->
+      <!--<if test="id != null">-->
+        <!--#{id,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="userId != null">-->
+        <!--#{userId,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="﻿tag != null">-->
+        <!--#{tag,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list1 != null">-->
+        <!--#{list1,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num1 != null">-->
+        <!--#{num1,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list2 != null">-->
+        <!--#{list2,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num2 != null">-->
+        <!--#{num2,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list3 != null">-->
+        <!--#{list3,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num3 != null">-->
+        <!--#{num3,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list4 != null">-->
+        <!--#{list4,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num4 != null">-->
+        <!--#{num4,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list5 != null">-->
+        <!--#{list5,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num5 != null">-->
+        <!--#{num5,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list6 != null">-->
+        <!--#{list6,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num6 != null">-->
+        <!--#{num6,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list7 != null">-->
+        <!--#{list7,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num7 != null">-->
+        <!--#{num7,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list8 != null">-->
+        <!--#{list8,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num8 != null">-->
+        <!--#{num8,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list9 != null">-->
+        <!--#{list9,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num9 != null">-->
+        <!--#{ num9,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list10 != null">-->
+        <!--#{list10,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num10 != null">-->
+        <!--#{num10,jdbcType=INTEGER},-->
+      <!--</if>-->
+    <!--</trim>-->
+  <!--</insert>-->
+
+
+  <!--<insert id="insertByUserId" parameterType="map"  useGeneratedKeys="true" keyProperty="id">-->
+    <!--insert into record-->
+    <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
+      <!--<if test="userId != null">-->
+        <!--userId,-->
+      <!--</if>-->
+      <!--<if test="﻿tag != null">-->
+        <!--tag,-->
+      <!--</if>-->
+      <!--<if test="list1 != null">-->
+        <!--list1,-->
+      <!--</if>-->
+      <!--<if test="num1 != null">-->
+        <!--num1,-->
+      <!--</if>-->
+      <!--<if test="list2 != null">-->
+        <!--list2,-->
+      <!--</if>-->
+      <!--<if test="num2 != null">-->
+        <!--num2,-->
+      <!--</if>-->
+      <!--<if test="list3 != null">-->
+        <!--list3,-->
+      <!--</if>-->
+      <!--<if test="num3 != null">-->
+        <!--num3,-->
+      <!--</if>-->
+      <!--<if test="list4 != null">-->
+        <!--list4,-->
+      <!--</if>-->
+      <!--<if test="num4 != null">-->
+        <!--num4,-->
+      <!--</if>-->
+      <!--<if test="list5 != null">-->
+        <!--list5,-->
+      <!--</if>-->
+      <!--<if test="num5 != null">-->
+        <!--num5,-->
+      <!--</if>-->
+      <!--<if test="list6 != null">-->
+        <!--list6,-->
+      <!--</if>-->
+      <!--<if test="num6 != null">-->
+        <!--num6,-->
+      <!--</if>-->
+      <!--<if test="list7 != null">-->
+        <!--list7,-->
+      <!--</if>-->
+      <!--<if test="num7 != null">-->
+        <!--num7,-->
+      <!--</if>-->
+      <!--<if test="list8 != null">-->
+        <!--list8,-->
+      <!--</if>-->
+      <!--<if test="num8 != null">-->
+        <!--num8,-->
+      <!--</if>-->
+      <!--<if test="list9 != null">-->
+        <!--list9,-->
+      <!--</if>-->
+      <!--<if test="num9 != null">-->
+        <!--num9,-->
+      <!--</if>-->
+      <!--<if test="list10 != null">-->
+        <!--list10,-->
+      <!--</if>-->
+      <!--<if test="num10 != null">-->
+        <!--num10,-->
+      <!--</if>-->
+    <!--</trim>-->
+    <!--<trim prefix="values (" suffix=")" suffixOverrides=",">-->
+      <!--<if test="userId != null">-->
+        <!--#{userId,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="﻿tag != null">-->
+        <!--#{tag,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list1 != null">-->
+        <!--#{list1,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num1 != null">-->
+        <!--#{num1,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list2 != null">-->
+        <!--#{list2,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num2 != null">-->
+        <!--#{num2,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list3 != null">-->
+        <!--#{list3,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num3 != null">-->
+        <!--#{num3,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list4 != null">-->
+        <!--#{list4,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num4 != null">-->
+        <!--#{num4,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list5 != null">-->
+        <!--#{list5,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num5 != null">-->
+        <!--#{num5,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list6 != null">-->
+        <!--#{list6,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num6 != null">-->
+        <!--#{num6,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list7 != null">-->
+        <!--#{list7,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num7 != null">-->
+        <!--#{num7,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list8 != null">-->
+        <!--#{list8,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num8 != null">-->
+        <!--#{num8,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list9 != null">-->
+        <!--#{list9,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num9 != null">-->
+        <!--#{ num9,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="list10 != null">-->
+        <!--#{list10,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="num10 != null">-->
+        <!--#{num10,jdbcType=INTEGER},-->
+      <!--</if>-->
+    <!--</trim>-->
+  <!--</insert>-->
 </mapper>
